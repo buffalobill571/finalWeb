@@ -1,0 +1,17 @@
+<div class="panel right-comrades">
+    <h4>My comrades:</h4>
+    <div *ngIf="comrades">
+      <div *ngFor="let comrade of comrades"
+      [routerLink]="['/post', comrade.username]"
+      routerLinkActive="new-active"
+      class="comrade my-pointer">
+          <div class="row">
+              <div class="col-sm-4"><img src="/static/blog/profile.svg" class="img-thumbnail" alt="Cinque Terre" width="100%"></div>
+              <div class="col-sm-8">
+                  <p class="page-descr">{{ comrade.username }}</p>
+                  <h5>{{ comrade.first }} {{ comrade.last }}</h5>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>

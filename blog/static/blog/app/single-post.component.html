@@ -1,0 +1,37 @@
+<div *ngIf="singlePost" class="panel single-post">
+    <button class="back-btn" type="button"
+    name="button" (click)="goBack()">
+      <span class="glyphicon glyphicon-chevron-left"></span> back
+    </button>
+    <div class="row">
+        <div class="col-sm-2"><img src="/static/blog/profile.svg" class="img-thumbnail" alt="Cinque Terre" width="100%"></div>
+        <div class="col-sm-10">
+            <p class="page-descr">{{ singlePost.author.username }} <span style="float:right">{{ singlePost.date }}</span></p>
+            <p>{{ singlePost.body }}</p>
+            <div *ngIf="profile.username===singlePost.author.username" class="text-right">
+                <button class="btn btn-info btn-xs">Edit</button>
+                <button class="btn btn-danger btn-xs">Delete</button>
+            </div>
+            <div class="panel comments">
+                <p class="comments-header">{{ singlePost.comments.length }} comments</p>
+                <div *ngFor="let comment of singlePost.comments" class="my-comment">
+                    <div class="row">
+                        <div class="col-sm-2"><img src="/static/blog/profile.svg" class="img-thumbnail" alt="Cinque Terre" width="100%"></div>
+                        <div class="col-sm-10">
+                            <p class="page-descr">{{ comment.author.username }} <span style="float:right">{{ comment.date }}</span></p>
+                            <p>{{ comment.body }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+          <textarea #textarea class="com-textarea" id="" rows="3" placeholder="Leave comment comrade..."></textarea>
+        </div>
+        <div style="padding:5px" class="col-sm-3">
+          <button (click)="addComment(textarea.value);textarea.value=''" class="my-com-btn">Comment</button>
+        </div>
+    </div>
+</div>

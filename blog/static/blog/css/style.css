@@ -1,0 +1,142 @@
+.navbar {
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.page-descr {
+    font-size: 0.8em;
+    color: #346883;
+}
+
+.new-input {
+    margin: 20px;
+}
+
+.new-panel {
+    padding: 15px;
+    border: 1px solid blue;
+}
+
+.new-text {
+    display: inline-block;
+    width: 85%;
+}
+
+.new-active {
+    background: #5fd0d0;
+    color: #fff;
+}
+
+.post {
+    padding: 10px;
+    border: 0.3px solid #63ddd8;
+}
+
+.single-post {
+    padding: 10px;
+    border: 0.3px solid #63ddd8;
+}
+
+.post:hover {
+  background-color: rgb(228, 255, 238);
+}
+
+.right-comrades {
+    padding: 10px;
+    border: 1px solid #6daaa7;
+}
+
+.comrade {
+    padding: 3px;
+    border: 1px solid aqua;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+.search-box {
+    padding: 10px;
+    position: relative;
+    border: 1px solid aqua;
+}
+
+.my-search {
+    width: 100%;
+    line-height: 2em;
+    border: 1px solid aqua;
+    border-radius: 4px;
+    background-color: #eafff7;
+    color: #464646;
+    padding: 2px 8px;
+}
+input.my-search:focus {
+    outline: none;
+}
+.search-result {
+    padding: 5px;
+    margin-bottom: 2px;
+    border: 1px solid blue;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.result-div {
+    padding: 3px;
+    width: 92%;
+    position: absolute;
+    opacity: 1;
+    z-index: 10000;
+    background: #fff;
+}
+
+.comments {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.comments-header {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2b5477;
+}
+
+.my-comment {
+    border: 1px solid aquamarine;
+    border-radius: 4px;
+    padding: 7px;
+    margin-bottom: 5px;
+}
+
+.com-textarea {
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    padding: 7px;
+}
+
+.my-com-btn {
+    margin: 0px;
+    margin-right: 3px;
+    width: 90%;
+    float: left;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    line-height: 2em;
+    background: #0e7c45;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.back-btn {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: rgb(212, 227, 224);
+  line-height: 1.3em;
+  padding: 7px 10px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.my-pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+<div class="panel search-box">
+    <input #searchBox class="my-search" type="text"
+    placeholder="Search for posts" (keyup)="search(searchBox.value)">
+    <div class="result-div">
+        <div *ngFor="let item of items | async"
+        [routerLink]="['/single', item.pk]" (click)="searchBox.value='';search(searchBox.value)" class="search-result">{{ item.body }}...</div>
+    </div>
+</div>

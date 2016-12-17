@@ -1,0 +1,29 @@
+<div *ngIf="posts.length!==0">
+  <h4 *ngIf="owner">{{ owner }} posts</h4>
+  <div *ngFor="let post of posts" class="panel post">
+      <div [routerLink]="['/single', post.pk]" class="row">
+          <div class="col-sm-2"><img src="/static/blog/profile.svg" class="img-thumbnail" alt="Cinque Terre" width="100%"></div>
+          <div class="col-sm-10">
+            <div >
+              <p class="page-descr">{{ post.author.username }} <span style="float:right">{{ post.date }}</span></p>
+              <div *ngIf="post.body.length < 200">
+                <p>{{ post.body }}</p>
+              </div>
+              <div *ngIf="post.body.length >= 200">
+                <p>{{ post.body | short:200 }}</p>
+                <p style="color:blue">Read more -></p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="profile.username===post.author.username" class="text-right">
+          <button class="btn btn-info btn-xs">Edit</button>
+          <button (click)="deletePost(post)" class="btn btn-danger btn-xs">Delete</button>
+      </div>
+  </div>
+</div>
+<div *ngIf="posts.length===0">
+  <div style="line-height:4em" class="alert alert-info text-center">
+    <h1>No posts yet comrade!!!</h1>
+  </div>
+</div>

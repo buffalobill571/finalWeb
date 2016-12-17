@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Logout</title>
+  </head>
+  <body>
+    <form action="/api/logout/" method="post">
+      {% csrf_token %}
+      <input type="submit" name="" value="Logout">
+    </form>
+    <hr>
+    <form action="/api/newpost/" method="post">
+      <input type="text" name="body" value="">
+      {% csrf_token %}
+      <input type="submit" name="" value="Post">
+    </form>
+  </body>
+</html>

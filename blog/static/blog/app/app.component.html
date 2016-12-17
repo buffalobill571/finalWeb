@@ -1,3 +1,24 @@
 <div class="container">
-  <h1>Hello {{ name }}</h1>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">LuftwaffeMedia</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+        <div class="col-sm-3">
+          <my-profile></my-profile>
+        </div>
+        <div class="col-sm-6">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="col-sm-3">
+            <my-search></my-search>
+            <my-comrades></my-comrades>
+        </div>
+    </div>
 </div>

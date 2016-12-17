@@ -1,0 +1,27 @@
+<div class="panel">
+   <div class="thumbnail">
+    <img [src]="imgUrl" class="img-thumbnail" width="100%">
+   </div>
+    <div class="panel">
+        <table *ngIf="profile" class="table">
+            <tr>
+                <td class="page-descr">Username:</td>
+                <td>{{ profile.username }}</td>
+            </tr>
+             <tr>
+                <td class="page-descr">Fullname</td>
+                <td>{{ profile.first }} {{ profile.last }}</td>
+            </tr>
+            <tr>
+                <td class="page-descr">E-mail:</td>
+                <td>{{ profile.email }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<ul *ngIf="profile" class="list-group">
+   <li [routerLink]="['/post', profile.username]" routerLinkActive="new-active"
+   class="list-group-item my-pointer">My posts</li>
+   <li [routerLink]="['/post', 'all']" routerLinkActive="new-active"
+   class="list-group-item my-pointer">News</li>
+</ul>

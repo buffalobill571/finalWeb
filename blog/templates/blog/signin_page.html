@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luftwaffe media</title>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a href="/" class="navbar-brand">LuftwaffeMedia</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/signin"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-header"><h1 class=text-center>Sign up</h1></div>
+                    <div class="panel-body">
+                        <form action="" method="post">
+                            <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input required type="text" class="form-control" id="username"
+                            placeholder="Enter username" name="username">
+                            </div>
+                            <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input required type="password" class="form-control" id="pwd"
+                            placeholder="Enter password" name="password">
+                            <label for="email">Email:</label>
+                            <input required type="email" class="form-control" id="email"
+                            placeholder="Enter e-mail" name="email">
+                            <label for="first">First name:</label>
+                            <input required type="text" class="form-control" id="first"
+                            placeholder="Enter first name" name="first">
+                            <label for="last">Last name:</label>
+                            <input required type="text" class="form-control" id="last"
+                            placeholder="Enter last name" name="last">
+                            </div>
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</body>
+</html>

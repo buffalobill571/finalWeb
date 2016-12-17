@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luftwaffe media</title>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a href="/" class="navbar-brand">LuftwaffeMedia</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/signin"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Luftwaffe Media</h1>
+                <p>Guten Tag my comrade! This is a blog for veteran's of eastern front! Sign up and communicate with your comrades</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<div class="panel new-panel">
+    <textarea #text [rows]="rows" (focus)="onFocus()" (blur)="onBlur()" type="text" class="form-control new-text" placeholder="What's new today comrade?"></textarea>
+    <button (click)="newPost(text.value);text.value=''" type="button" style="float:right" class="btn btn-info">Post</button>
+</div>
