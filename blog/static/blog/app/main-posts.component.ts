@@ -18,6 +18,7 @@ export class MainPostsComponent implements OnInit {
   profile: Profile;
   posts: Post[] = [];
   identify: string;
+  scrollWait: boolean = false;
 
   constructor(
     private profileService: ProfileService,

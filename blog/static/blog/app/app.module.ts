@@ -3,6 +3,7 @@ import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 import { FormsModule }          from '@angular/forms';
 import { HttpModule }           from '@angular/http';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 import { AppComponent }         from './app.component';
 import { RoutingModule }        from './routing.module';
@@ -14,6 +15,8 @@ import { MainPostsComponent }   from './main-posts.component';
 import { ComradesComponent }    from './comrades.component';
 import { SearchComponent }      from './search.component';
 import { SinglePostComponent }  from './single-post.component';
+import { EditPostComponent }    from './edit-post.component';
+import { EditCommentComponent } from './edit-comment.component';
 
 @NgModule({
   imports:      [
@@ -21,6 +24,7 @@ import { SinglePostComponent }  from './single-post.component';
     FormsModule,
     RoutingModule,
     HttpModule,
+    InfiniteScrollModule,
   ],
   declarations: [
     AppComponent,
@@ -32,6 +36,8 @@ import { SinglePostComponent }  from './single-post.component';
     ComradesComponent,
     SearchComponent,
     SinglePostComponent,
+    EditPostComponent,
+    EditCommentComponent,
   ],
   bootstrap:    [ AppComponent ]
 })

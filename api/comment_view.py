@@ -22,3 +22,31 @@ def add_comment(request, pk):
     return HttpResponse(
         serializer.comment_serialize(comment)
     )
+
+
+def get_comment(request, pk):
+    pk = int(pk)
+    comment = Comment.objects.get(pk=pk)
+
+    return HttpResponse(
+        serializer.comment_serialize(comment)
+    )
+
+
+@csrf_exempt
+@login_required
+def update_comment(request, pk):
+    pk = int(pk)
+    comment = Comment.objects.get(pk=pk)
+    comment.body = json.loads(request.body.decode())['body']
+    comment.save()
+
+    return HttpResponse()
+
+
+@csrf_exempt
+@login_required
+def delete_comment(request, pk):
+    pk = int(pk)
+    Comment.objects.get(pk=pk).delete()
+    return HttpResponse()

@@ -1,4 +1,4 @@
-<div *ngIf="singlePost" class="panel single-post">
+<div *ngIf="singlePost && profile" class="panel single-post">
     <button class="back-btn" type="button"
     name="button" (click)="goBack()">
       <span class="glyphicon glyphicon-chevron-left"></span> back
@@ -9,8 +9,8 @@
             <p class="page-descr">{{ singlePost.author.username }} <span style="float:right">{{ singlePost.date }}</span></p>
             <p>{{ singlePost.body }}</p>
             <div *ngIf="profile.username===singlePost.author.username" class="text-right">
-                <button class="btn btn-info btn-xs">Edit</button>
-                <button class="btn btn-danger btn-xs">Delete</button>
+                <span [routerLink]="['/edit/post', singlePost.pk]" style="margin-right:5px;" class="glyphicon glyphicon-edit edit-icon"></span>
+                <span (click)="deletePost()" class="glyphicon glyphicon-remove edit-icon"></span>
             </div>
             <div class="panel comments">
                 <p class="comments-header">{{ singlePost.comments.length }} comments</p>
@@ -20,6 +20,12 @@
                         <div class="col-sm-10">
                             <p class="page-descr">{{ comment.author.username }} <span style="float:right">{{ comment.date }}</span></p>
                             <p>{{ comment.body }}</p>
+                            <div *ngIf="(profile.username===comment.author.username) || (profile.username===singlePost.author.username)" class="text-right">
+                                <span *ngIf="profile.username===comment.author.username"
+                                [routerLink]="['/edit/comment', comment.pk]" style="margin-right:5px;"
+                                class="glyphicon glyphicon-edit edit-icon"></span>
+                                <span (click)="deleteComment(comment)" class="glyphicon glyphicon-remove edit-icon"></span>
+                            </div>
                         </div>
                     </div>
                 </div>

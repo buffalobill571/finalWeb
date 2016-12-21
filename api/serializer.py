@@ -84,6 +84,7 @@ def single_post(post, likes, comments):
 
     for i in comments:
         output['comments'].append({
+            'pk': i.pk,
             'body': i.body,
             'date': i.date.strftime("%Y-%m-%d %H:%M:%S"),
             'author': {
@@ -99,6 +100,7 @@ def single_post(post, likes, comments):
 
 def comment_serialize(comment):
     output = {
+        'pk': comment.pk,
         'body': comment.body,
         'date': comment.date.strftime("%Y-%m-%d %H:%M:%S"),
         'author': {

@@ -36,8 +36,10 @@ def deletepost(request, num):
 @login_required
 @csrf_exempt
 def postof(request, username):
-    user = User.objects.get(username=username)
-    posts = list(Post.objects.all().filter(author=user).order_by("-pk"))
+    user = User.objects.all().get(username=username)
+    posts = list(
+        Post.objects.all().filter(author=user).order_by("-pk")
+    )
     return HttpResponse(
                     serializer.posts_json(posts),
                     content_type='application/json',

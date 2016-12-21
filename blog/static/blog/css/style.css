@@ -20,6 +20,7 @@
 .new-text {
     display: inline-block;
     width: 85%;
+    resize: none;
 }
 
 .new-active {
@@ -139,4 +140,21 @@ input.my-search:focus {
 
 .my-pointer {
   cursor: pointer;
+}
+
+.edit-post {
+    width: 100%;
+    padding: 10px;
+}
+
+.edit-btns {
+    margin: 10px;
+}
+
+.edit-icon {
+  color: rgb(182, 182, 182);
+}
+
+.edit-icon:hover {
+  color: rgb(130, 130, 130);
 }

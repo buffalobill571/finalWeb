@@ -11,7 +11,7 @@ export class PostService {
 
   constructor(private http: Http) {}
   getPosts(name: string): Promise<Post[]> {
-    return this.http.get(`/api/postsof/${name}`)
+    return this.http.get(`/api/postsof/${name}/`)
                     .toPromise()
                     .then(response => response.json() as Post[]);
   }
@@ -21,7 +21,7 @@ export class PostService {
                     .then((response) => response.json() as Post);
   }
   deletePost(pk: number): Promise<void> {
-    return this.http.post(`/api/deletepost/${pk}`, '', {headers: this.headers})
+    return this.http.post(`/api/deletepost/${pk}/`, '', {headers: this.headers})
                     .toPromise()
                     .then(() => null);
   }

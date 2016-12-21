@@ -31,6 +31,5 @@ export class SearchComponent implements OnInit {
       .distinctUntilChanged()
       .switchMap(term => term ?
           this.searchService.search(term) : Observable.of<ShortPost[]>([]));
-    this.items.subscribe(r => console.log(r));
   }
 }

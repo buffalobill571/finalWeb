@@ -17,16 +17,22 @@ function capitalizeFirstLetter(string: string): string {
   templateUrl: `all-posts.component.html`,
 })
 export class AllPostsComponent  {
+
   @Input('posts') posts: Post[];
   @Input('profile') profile: Profile;
 
+  imgUrl: string = "/static/blog/profile.svg";
   owner: string;
 
   constructor(
     private postService: PostService,
     private route: ActivatedRoute,
   ) {
-    this.route.params.subscribe(p => this.owner = capitalizeFirstLetter(p['name']))
+    this.route
+        .params
+        .subscribe(p => {
+          this.owner = capitalizeFirstLetter(p['name']);
+        });
   }
 
   deletePost(post: Post) {
@@ -34,6 +40,4 @@ export class AllPostsComponent  {
       () => this.posts.splice(this.posts.indexOf(post), 1)
     );
   }
-
-  imgUrl: string = "/static/blog/profile.svg";
 }

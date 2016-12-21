@@ -45,6 +45,18 @@ export class SinglePostComponent implements OnInit {
                 .then(comment => this.singlePost.comments.push(comment));
   }
 
+  deletePost() {
+    this.service.deletePost(this.singlePost.pk)
+                .then(() => this.goBack());
+  }
+
+  deleteComment(comment: Comment) {
+    this.service.deleteComment(comment.pk)
+                .then(() => {
+                  this.singlePost.comments.splice(this.singlePost.comments.indexOf(comment), 1)
+                })
+  }
+
   goBack(): void {
     this.location.back();
   }

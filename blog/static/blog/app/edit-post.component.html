@@ -1,0 +1,10 @@
+<div *ngIf="post" class="panel post">
+    <textarea #text class="edit-post" cols="30" rows="10">{{ post.body }}</textarea>
+    <div class="edit-btns">
+        <button (click)="update(text.value)" class="btn btn-success">Save</button>
+        <button (click)="goBack()" class="btn btn-info">Cancel</button>
+    </div>
+    <div *ngIf="error" class="alert alert-danger">
+      Textarea is empty! Please fill blank
+    </div>
+</div>
